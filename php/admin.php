@@ -1,12 +1,13 @@
 <?php
 session_start();
-$con=mysqli_connect("172.31.100.41","quizmnnit","quizportal123");
-mysqli_select_db($con,'dbquizmnnit');
+$con=mysql_connect("172.31.100.41","quizmnnit","quizportal123");
+mysql_select_db('dbquizmnnit');
 $email = $_POST['email'];
-$password =$_POST['password'];
+$password =sha1($_POST['password']);
+
 $query="SELECT * FROM admin WHERE username='$email' AND password='$password'";
-$result=mysqli_query($con,$query);
-$count = mysqli_num_rows($result);
+$result=mysql_query($query);
+$count = mysql_num_rows($result);
 
 if($count>0)
 {
@@ -17,8 +18,8 @@ else
 {
 	$_SESSION["teacher_email"]=$email;
 	$query="SELECT * FROM `Teacher Info` WHERE email='$email' AND password='$password'";
-	$result=mysqli_query($con,$query);
-	$count = mysqli_num_rows($result);
+	$result=mysql_query($query);
+	$count = mysql_num_rows($result);
 	if($count>0)
 	{
 		echo "<script>
@@ -28,8 +29,8 @@ else
 	else
 	{
 	  $query="SELECT * FROM `Teacher Info` WHERE email='$email'";
-	  $result=mysqli_query($con,$query);
-   	  $count = mysqli_num_rows($result);
+	  $result=mysql_query($query);
+   	  $count = mysql_num_rows($result);
 	  if($count>0)
 	  {
 	   echo "<script>
@@ -46,5 +47,5 @@ else
 	  }
 	}
 }
-mysqli_close($con);
+mysql_close($con);
 ?>

@@ -18,14 +18,14 @@ $pdf->SetDisplayMode('default');
 
 //Set x and y position for the main text, reduce font size and write content
 
-$con=mysqli_connect("172.31.100.41","quizmnnit","quizportal123");
-mysqli_select_db($con,'dbquizmnnit');
+$con=mysql_connect("172.31.100.41","quizmnnit","quizportal123");
+mysql_select_db('dbquizmnnit');
 
 $sql="SELECT * FROM `Teacher Info` ";
-$result = mysqli_query($con,$sql);
+$result = mysql_query($sql);
 $x=20;
 $y=20;
-while($rows= (mysqli_fetch_array($result,MYSQLI_ASSOC)))
+while($rows= (mysql_fetch_array($result,MYSQLI_ASSOC)))
 {           
     $email = $rows['email'];
     $Teacher_id = $rows['Teacher_id'];
@@ -50,6 +50,5 @@ while($rows= (mysqli_fetch_array($result,MYSQLI_ASSOC)))
 }
 
 //Output the document
-$pdf->Output('test.pdf','I'); 
-mysqli_close();    
+$pdf->Output('test.pdf','I');     
 ?>
