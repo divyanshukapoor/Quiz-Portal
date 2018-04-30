@@ -1,6 +1,6 @@
 <<?php
-$con=mysqli_connect("172.31.100.41","quizmnnit","quizportal123");
-mysqli_select_db($con,'dbquizmnnit');
+$con=mysql_connect("172.31.100.41","quizmnnit","quizportal123");
+mysql_select_db('dbquizmnnit');
 $email = $_POST['email'];
 $password =$_POST['password'];
 $name=$_POST['name'];
@@ -9,31 +9,31 @@ if($department==null)
 {
 	echo "<script>
 	alert('Please add department');
-	window.location.href='../admin.php';
+	window.location.href='../admin.html';
 	</script>";
 }
 else
 {
 	$query="SELECT * FROM `Teacher Info` WHERE email='$email'";
-	$result=mysqli_query($con,$query);
-	$count = mysqli_num_rows($result);
+	$result=mysql_query($query);
+	$count = mysql_num_rows($result);
 	if($count>0)
 	{
 		echo "<script>
 		alert('$email already exists!');
-		window.location.href='../admin.php';
+		window.location.href='../admin.html';
 		</script>";
 	}
 	else
 	{
-		$id=substr($email,0,strlen($email)-12);
-		$query="INSERT INTO `Teacher Info`(`email`,`Teacher_id`, `password`, `name`, `department`) VALUES ('$email','$id','$password','$name','$department')";
-		$result=mysqli_query($con,$query);
+                $password=sha1($password);
+		$query="INSERT INTO `Teacher Info`(`email`, `password`, `name`, `department`) VALUES ('$email','$password','$name','$department')";
+		$result=mysql_query($query);
 		echo "<script>
 		alert('$name is added.');
-		window.location.href='../admin.php';
+		window.location.href='../admin.html';
 		</script>";
 	}
 }
-mysqli_close($con);
+mysql_close($con);
 ?>

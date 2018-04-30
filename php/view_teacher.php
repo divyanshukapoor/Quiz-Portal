@@ -4,7 +4,7 @@
         $view_teachers_query="select * from `Teacher Info` ";//select query for viewing users.  
         $run=mysqli_query($dbcon,$view_teachers_query);//here run the sql query.  
         $storeArray=Array();
-        while($row=mysqli_fetch_array($run,MYSQLI_ASSOC))//while look to fetch the result and store in a array $row.  
+        while($row=mysqli_fetch_array($run,MYSQL_ASSOC))//while look to fetch the result and store in a array $row.  
         {  
             $teacher_email=$row['email'];  
             $teacher_password=$row['password'];  
