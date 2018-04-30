@@ -178,14 +178,13 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 15px;
 }
 .container-create-test
 {
+  margin-top:30px;
   width: 100%;  
   height:100%;
-  -moz-box-shadow: 0 0 5px #999;
-  -webkit-box-shadow: 0 0 5px #999;
-  box-shadow: 0 0 5px #999;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -193,7 +192,7 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin:auto;
+  margin-left: 250px;
 }
 .wrap3{
   
@@ -229,13 +228,9 @@ iframe {
 }
 .wrap4{
   
-  width: 40%;
+  width: 720px;
   background: #fff;
   border-radius: 10px;
-  border-style:groove;
-  -moz-box-shadow: 0 0 5px #999;
-  -webkit-box-shadow: 0 0 5px #999;
-  box-shadow: 0 0 5px #999;
   overflow: hidden;
   margin: auto;
   display: -webkit-box;
@@ -245,27 +240,7 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px 20px 30px 70px;
-}
-.wrap5{
-  
-  width: 40%;
-  background: #fff;
-  border-radius: 10px;
-  border-style:groove;
-  -moz-box-shadow: 0 0 5px #999;
-  -webkit-box-shadow: 0 0 5px #999;
-  box-shadow: 0 0 5px #999;
-  overflow: hidden;
-  margin: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px 20px 30px 40px;
+  padding: 50px 130px 33px 95px;
 }
 .wrap{
   
@@ -321,7 +296,7 @@ iframe {
 .backbutton1
 {
 	float:left;
-	margin-left:20%;
+	margin-left:170px;
 	margin-top:40px;
 }
 .nextbutton
@@ -387,7 +362,7 @@ iframe {
     width: 250px;
 }
 .input2 {
-	width: 100%;
+	width: 200%;
     padding: 10px 20px;
     margin: 8px 0;
     display: inline;
