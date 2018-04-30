@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+function formatTime(seconds) {
+    var h = Math.floor(seconds / 3600),
+        m = Math.floor(seconds / 60) % 60,
+        s = seconds % 60;
+    if (h < 10) h = "0" + h;
+    if (m < 10) m = "0" + m;
+    if (s < 10) s = "0" + s;
+    return h + ":" + m + ":" + s;
+}
+var count = 3600;//give the duration of timer here
+var counter = setInterval(timer, 1000);
+
+function timer() {
+    count--;
+    if (count < 0) return clearInterval(counter);
+    document.getElementById('timer').innerHTML = formatTime(count);
+}
+</script>
+</head>
+<body>
+
+<p id="timer"></p>
+
+</body>
+</html>

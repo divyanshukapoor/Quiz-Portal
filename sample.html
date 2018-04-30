@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        setInterval(function() {
+            $.getJSON('/_load_node', {
+            }, function(data) {
+              if(data.test_result == 1) {
+                $("div.value").html(data.test_result);
+                var newHTML = [];
+                for (var i = 0; i < data.next_steps.length; i++) {
+newHTML.push('<p><button type="submit" name="action" value="' + data.next_steps[i][0] + '" />' + data.next_steps[i][1] + '</button>');
+               }
+                $("div.button").html(newHTML.join(""));
+              }
+            return false;
+          });
+        }, 1000);
+    </script>
+
+</head>
+<body>
+<div class="value"></div>
+<div class="button"></div>
+</body>
+</html>
+	

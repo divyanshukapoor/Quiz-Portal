@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script type="text/javascript">
+       function createKeyboard()
+{
+   for(var i=0; i<20; i++)
+   {
+    var btn = document.createElement("BUTTON");
+    btn.id = 'btn' + i;
+    btn.innerHTML = i;
+    btn.setAttribute("value", i);
+    btn.setAttribute("text",i);
+	btn.style.width="5%";
+	btn.style.background="white";
+	btn.style.height="5%";	  
+	//this.style.color="black";
+    btn.style.fontSize = "24px";
+	btn.style.border="2px groove #4CAF50";
+	btn.style.margin="2px";
+	btn.onmouseover=function(){
+	  this.style.background="#4CAF50";
+	  this.style.color="white";
+	}
+	btn.onmouseleave=function(){
+	  this.style.background="white";
+	  this.style.color="black";
+	}
+    document.body.appendChild(btn);
+	if(i%3==0)
+	document.write("<br>");
+    }
+};
+    </script>
+
+</head>
+<body onload="createKeyboard()">
+</body>
+</html>

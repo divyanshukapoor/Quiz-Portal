@@ -1,0 +1,29 @@
+#navai {
+  height:auto;
+  float: left;
+}     
+
+#questions {
+  height:auto;
+  float:left;
+}
+#rcorners35 {
+    left:310px;
+    top:100px;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width: 1000px;
+    height: 570px;
+    position:fixed;
+}
+#timerstuff
+{
+float:right;
+margin-left:550px;
+}
+.navbar-left
+{
+float:left;
+margin-left:-40px;
+}

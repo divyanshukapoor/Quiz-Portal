@@ -1,0 +1,75 @@
+<html>  
+<head lang="en">  
+    <meta charset="UTF-8">  
+    <link type="text/css" rel="stylesheet" href="bootstrap-3.2.0-dist\css\bootstrap.css"> <!--css file link in bootstrap folder-->  
+    <title>View teachers</title>  
+</head>  
+<style>  
+    .login-panel {  
+        margin-top: 150px;  
+    }  
+    .table {  
+        margin-top: 50px;  
+  
+    }  
+  
+</style>  
+  
+<body>  
+  
+<div class="table-scrol">  
+    <h1 align="center"><?php echo "All the teachers";?></h1>  
+  
+<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
+  
+  
+    <table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
+        <thead>  
+  
+        <tr>  
+            <th>Teacher Name</th>  
+            <th>Teacher E-mail</th>
+			<th>Teacher Department</th>			
+            <th>Teacher Password</th>  
+            <th>Delete Teacher</th>  
+        </tr>  
+        </thead>
+        <?php  
+		$dbcon=mysqli_connect('172.31.100.41','quizmnnit','quizportal123');
+		mysqli_select_db($dbcon,'dbquizmnnit');
+        $view_teachers_query="select * from `Teacher Info` ";//select query for viewing users.  
+        $run=mysqli_query($dbcon,$view_teachers_query);//here run the sql query.  
+        $storeArray=Array();
+        while($row=mysqli_fetch_array($run,MYSQL_ASSOC))//while look to fetch the result and store in a array $row.  
+        {  
+            $teacher_email=$row['email'];  
+            $teacher_password=$row['password'];  
+            $teacher_name=$row['name'];  
+            $teacher_department=$row['department']; 
+			echo "hello";
+			echo $teacher_email;
+			echo $teacher_department;
+			echo $teacher_password;
+        ?>  
+  
+        <tr>  
+		<!--here showing results in the table -->  
+            <td><?php echo $teacher_name;  ?></td>  
+            <td><?php echo $teacher_email;  ?></td>  
+            <td><?php echo $teacher_department;  ?></td>  
+            <td><?php echo $teacher_password;  ?></td>  
+            <td><a href="delete.php?del=<?php echo $teacher_id ?>"><button class="btn btn-danger">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
+        </tr>  
+  
+        <?php }
+		mysqli_close($dbcon);
+		?>  
+  
+    </table>  
+        </div>  
+</div>  
+  
+  
+</body>  
+  
+</html>  

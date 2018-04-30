@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"> </script>
+    <script type="text/javascript" src="jquery.fullscreen/release/jquery.fullscreen.min.js"> </script>
+        <script type="text/javascript">
+        $(function() {
+            $('.open').click(function() {
+                $('body').fullscreen();
+                return false;
+            });
+            $('.close').click(function() {
+                $.fullscreen.exit();
+                return false;
+            });
+        });
+        </script>
+    
+    </head>
+    <body>
+    
+        <p>
+<a href="https://www.google.com" class="open">Open Fullscreen</a> / <a href="#" class="close">Exit fullscreen</a>
+</p>
+    </body>
+</html>
