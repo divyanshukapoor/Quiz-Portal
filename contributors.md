@@ -2,7 +2,7 @@
 
 #### [Satyam Kumar Gupta](https://github.com/satyam0298)
 
-####[Kshitij Chaudhary](https://github.com/kshitij1210)
+#### [Kshitij Chaudhary](https://github.com/kshitij1210)
 
 #### [Aman Shroff](https://github.com/astro6026)
 
