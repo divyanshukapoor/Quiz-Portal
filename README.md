@@ -1,8 +1,5 @@
 # Quiz-Portal-for-MNNIT
-A collage portal to host quizzes for MNNIT
-
-This is a portal t which can be used to host quizzes by using a local server having the ability to store studen and teacher information
-in databases. 
+This quiz portal will be used for conducting quizes and practical exams by teacher of any department. The quiz portal would reduce the work load on the teachers and evaluation of the students would be fair and unbiased. The portal would also help in conducting quizes in timely manner with no possibility of use of unfair means. The students can also check their marks and if they have any problem with the evaluation , they can also submit a discrepancy request. The teacher would have the record of each student and every quiz conducted by him which will be maintained in his database.
 
 ## Instruction
 The project uses "ngx-admin" template.
